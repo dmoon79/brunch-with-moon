@@ -1,12 +1,18 @@
 exports.config =
   files:
     javascripts:
-      joinTo: 'js/app.js'
+      joinTo:
+        #'js/app.js'
+        'js/app.js': /^app/
+        'js/vendor.js': /^vendor/
     stylesheets:
-      defaultExtension: 'sass'
+      defaultExtension: 'scss'
       joinTo: 'css/app.css',
     templates:
       joinTo: 'js/app.js'
+      # order:
+      #   before:
+
 
   plugins:
     # autoReload:
@@ -25,3 +31,8 @@ exports.config =
       debug: 'comments'
       # options:
       #   includePaths:
+
+  server:
+    port: 4444
+
+  sourceMaps: true
